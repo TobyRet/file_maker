@@ -27,9 +27,9 @@ def decision(user_choice, file_name = 'hello_from_ruby.txt', user_input)
   if user_choice == 1.to_s
     save(file_name, user_input)
   elsif user_choice == 2.to_s
-    read
+    read(file_name)
   elsif user_choice == 3.to_s
-    introspect
+    introspect(file_name)
   else
     puts "That is not an option, fool. Try again. Did you enter a number?"
     menu
@@ -48,7 +48,7 @@ def save(file_name, user_input)
 end
 
 # read option
-def read
+def read(file_name)
   puts "Read selected"
   File.open(file_name, 'r') do |file|
     file.each_line do |line|
@@ -59,8 +59,14 @@ def read
 end
 
 # introspect option
-def introspect
+def introspect(file_name)
   puts "Introspect selected"
+  file_name = 'file_maker.rb'
+   File.open(file_name, 'r') do |file|
+    file.each_line do |line|
+      puts "#{line}"
+    end
+  end
 end
 
 file_name = 'hello_from_ruby.txt'
