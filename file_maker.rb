@@ -5,8 +5,8 @@
 #If the user types 'introspect' make the program print itself to the screen
 
 
-def make_file
-  file=File.new('hello_from_ruby'.txt)
+def make_file(file_name)
+  file=File.new(file_name, 'w')
 end
 
 def menu
@@ -34,5 +34,5 @@ def user_input(file)
   end
 end
 
-make_file
-intro
+make_file('hello_from_ruby.txt')
+menu
